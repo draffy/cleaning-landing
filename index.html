@@ -12,6 +12,10 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            min-height: 100vh; /* Устанавливаем минимальную высоту */
+            overflow-x: hidden; /* Убираем горизонтальную прокрутку */
+            display: flex;
+            flex-direction: column;
         }
 
         header {
@@ -88,7 +92,15 @@
         /* Стили для остальных секций */
         footer {
             margin-top: 40px; /* Увеличен отступ сверху */
-            margin-bottom: 40px; /* Увеличен отступ снизу */
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-top: 1px solid #ddd;
+            text-align: center;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #007bff;
         }
     </style>
 </head>
