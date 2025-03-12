@@ -6,11 +6,32 @@
     <title>Уборка квартир перед сдачей</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        /* Общие стили для страницы */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f8f8;
+        }
+
+        section {
+            margin: 20px;
+        }
+
         /* Карусель отзывов */
         #reviews {
             position: relative;
             max-width: 600px;
             margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-radius: 10px;
         }
 
         .carousel-container {
@@ -29,8 +50,8 @@
 
         .carousel-item img {
             border-radius: 50%;
-            width: 60px;
-            height: 60px;
+            width: 270px; /* Установлен размер фото 270px */
+            height: 270px; /* Высота также 270px */
             margin-right: 20px;
         }
 
@@ -57,6 +78,13 @@
 
         .carousel-button-next {
             right: 10px;
+        }
+
+        /* Стили для остальных секций */
+        #services, #advantages, #process, #contact-form, footer {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
     </style>
 </head>
