@@ -18,10 +18,13 @@
             text-align: center;
             padding: 20px;
             background-color: #f8f8f8;
+            margin-bottom: 40px; /* Увеличен отступ снизу */
         }
 
         section {
-            margin: 20px;
+            margin: 40px auto; /* Увеличен отступ сверху и снизу */
+            max-width: 1200px;
+            padding: 20px;
         }
 
         /* Карусель отзывов */
@@ -32,6 +35,7 @@
             padding: 20px;
             background-color: #f8f8f8;
             border-radius: 10px;
+            margin-bottom: 40px; /* Добавлен отступ снизу */
         }
 
         .carousel-container {
@@ -45,7 +49,8 @@
             align-items: center;
             margin: 10px;
             flex-shrink: 0;
-            width: 100%;
+            width: 100%; /* Каждая карточка занимает 100% ширины контейнера */
+            transition: transform 0.5s ease-in-out;
         }
 
         .carousel-item img {
@@ -85,6 +90,11 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+        }
+
+        footer {
+            margin-top: 40px; /* Увеличен отступ сверху */
+            margin-bottom: 40px; /* Увеличен отступ снизу */
         }
     </style>
 </head>
