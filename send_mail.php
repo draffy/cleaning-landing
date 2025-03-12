@@ -6,6 +6,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $comment = $_POST['comment'];
 
+    // Валидация данных
+    if (empty($name) || empty($phone) || empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "Пожалуйста, заполните все поля формы корректно.";
+        exit;
+    }
+
     // Указываем адрес получателя
     $to = 'lukin41@yandex.ru';
     // Тема письма
@@ -18,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $message .= "Комментарий: $comment\n";
     
     // Заголовки письма
-    $headers = "From: $email" . "\r\n" .
+    $headers = "From: no-reply@yourdomain.com" . "\r\n" .
                "Reply-To: $email" . "\r\n" .
                "X-Mailer: PHP/" . phpversion();
     
