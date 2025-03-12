@@ -191,7 +191,7 @@
                 <li><a href="business.html">Для юр. лиц</a></li>
                 <li><a href="promo.html">Акции</a></li>
                 <li><a href="about.html">О нас</a></li>
-                <li><a href="reviews.html">Отзывы</a></li>
+                <li><a href="reviews.html">Отзывы</a></li> <!-- Здесь добавлена ссылка на страницу с отзывами -->
                 <li><a href="portfolio.html">Примеры работ</a></li>
                 <li><a href="contacts.html">Контакты</a></li>
             </ul>
@@ -274,31 +274,4 @@
 
     <script>
         let currentIndex = 0;
-        const items = document.querySelectorAll('.carousel-item');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-
-        function showItem(index) {
-            const totalItems = items.length;
-            if (index >= totalItems) currentIndex = 0;
-            if (index < 0) currentIndex = totalItems - 1;
-
-            items.forEach((item, i) => {
-                item.style.transform = `translateX(${(i - currentIndex) * 100}%)`;
-            });
-        }
-
-        prevBtn.addEventListener('click', () => {
-            currentIndex--;
-            showItem(currentIndex);
-        });
-
-        nextBtn.addEventListener('click', () => {
-            currentIndex++;
-            showItem(currentIndex);
-        });
-
-        showItem(currentIndex);
-    </script>
-</body>
-</html>
+        const items = document.querySelectorAll('.carousel-item
