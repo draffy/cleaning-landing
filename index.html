@@ -12,8 +12,8 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            min-height: 100vh; /* Устанавливаем минимальную высоту */
-            overflow-x: hidden; /* Убираем горизонтальную прокрутку */
+            min-height: 100vh;
+            overflow-x: hidden;
             display: flex;
             flex-direction: column;
         }
@@ -22,116 +22,89 @@
             text-align: center;
             padding: 20px;
             background-color: #f8f8f8;
-            margin-bottom: 40px; /* Увеличен отступ снизу */
+            margin-bottom: 40px;
         }
 
         section {
-            margin: 35px auto; /* Отступы по 35px сверху и снизу */
+            margin: 35px auto;
             max-width: 1200px;
             padding: 20px;
         }
 
         /* Карусель отзывов */
         #reviews {
-            margin-top: 30px;
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 20px;
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            margin-bottom: 40px;
         }
 
-        .reviews-container {
+        .carousel-container {
             display: flex;
-            flex-direction: row;
-            gap: 20px;
-            transition: transform 0.5s ease;
+            overflow: hidden;
+            align-items: center;
         }
 
-        .review-item {
+        .carousel-item {
             display: flex;
             align-items: center;
-            gap: 20px;
-            padding: 10px;
-            border-radius: 8px;
-            background-color: #f9f9f9;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            min-width: 300px;
-            justify-content: center;
+            margin: 10px;
+            flex-shrink: 0;
+            width: 100%;
+            transition: transform 0.5s ease-in-out;
         }
 
-        .review-img {
-            width: 250px;
-            height: 250px;
-            object-fit: cover;
+        .carousel-item img {
             border-radius: 50%;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+            width: 180px;
+            height: 180px;
+            margin-right: 50px;
         }
 
-        .review-text {
-            max-width: 600px;
+        .carousel-item p {
             font-size: 16px;
             line-height: 1.5;
-            color: #555;
         }
 
-        .review-text p {
-            margin: 0;
-        }
-
-        .carousel-arrow {
+        .carousel-button {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.3);
+            background-color: rgba(0, 0, 0, 0.5);
             color: white;
             border: none;
             padding: 10px;
             cursor: pointer;
             font-size: 18px;
-            z-index: 1;
         }
 
-        .prev {
+        .carousel-button-prev {
             left: 10px;
         }
 
-        .next {
+        .carousel-button-next {
             right: 10px;
         }
 
-        /* Стили для остальных секций */
         footer {
-            margin-top: 40px; /* Увеличен отступ сверху */
-            padding: 20px;
-            background-color: #f8f8f8;
-            border-top: 1px solid #ddd;
+            background-color: #3CB371;
+            color: white;
             text-align: center;
+            padding: 20px;
+            margin-top: 20px;
         }
 
         footer a {
+            color: #28a745;
             text-decoration: none;
-            color: #007bff;
+            font-weight: bold;
         }
 
         footer a:hover {
             text-decoration: underline;
-        }
-
-        /* Медиазапросы для мобильных устройств */
-        @media (max-width: 768px) {
-            .reviews-container {
-                flex-direction: column;
-            }
-
-            .review-item {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .review-img {
-                margin-bottom: 10px;
-            }
-
-            .review-text {
-                max-width: 100%;
-            }
         }
     </style>
 </head>
@@ -167,41 +140,22 @@
     
     <section id="reviews">
         <h3>Отзывы клиентов</h3>
-        <div class="reviews-carousel">
-            <button class="carousel-arrow prev">←</button>
-            <div class="reviews-container">
-                <div class="review-item">
-                    <img src="client1.jpg" alt="Анна, арендодатель" class="review-img">
-                    <div class="review-text">
-                        <p>"Отличная работа! Квартира была в идеальном состоянии после уборки." — Анна, арендодатель.</p>
-                    </div>
-                </div>
-                <div class="review-item">
-                    <img src="client2.jpg" alt="Сергей, риэлтор" class="review-img">
-                    <div class="review-text">
-                        <p>"Быстро, качественно и недорого! Рекомендую!" — Сергей, риэлтор.</p>
-                    </div>
-                </div>
-                <div class="review-item">
-                    <img src="client3.jpg" alt="Екатерина, арендодатель" class="review-img">
-                    <div class="review-text">
-                        <p>"Очень довольна результатом! Квартира блестела, и мы сдали её намного быстрее." — Екатерина, арендодатель.</p>
-                    </div>
-                </div>
+        <div class="carousel-container" id="carousel">
+            <div class="carousel-item">
+                <img src="client1.jpg" alt="Client 1">
+                <p>"Отличная работа! Квартира была в идеальном состоянии после уборки." — Анна, арендодатель.</p>
             </div>
-            <button class="carousel-arrow next">→</button>
+            <div class="carousel-item">
+                <img src="client2.jpg" alt="Client 2">
+                <p>"Быстро, качественно и недорого! Рекомендую!" — Сергей, риэлтор.</p>
+            </div>
+            <div class="carousel-item">
+                <img src="client3.jpg" alt="Client 3">
+                <p>"Очень довольна результатом! Квартира блестела, и мы сдали её намного быстрее." — Екатерина, арендодатель.</p>
+            </div>
         </div>
-    </section>
-    
-    <section id="contact-form">
-        <h3>Заполните форму ниже, чтобы получить бесплатную консультацию!</h3>
-        <form>
-            <label>Имя: <input type="text" name="name" required></label><br>
-            <label>Телефон: <input type="tel" name="phone" required></label><br>
-            <label>Email: <input type="email" name="email" required></label><br>
-            <label>Комментарий: <textarea name="comment"></textarea></label><br>
-            <button type="submit">Отправить</button>
-        </form>
+        <button class="carousel-button carousel-button-prev" id="prevBtn">&#10094;</button>
+        <button class="carousel-button carousel-button-next" id="nextBtn">&#10095;</button>
     </section>
     
     <footer>
@@ -216,28 +170,31 @@
 
     <script>
         let currentIndex = 0;
-        const reviewsContainer = document.querySelector('.reviews-container');
-        const prevBtn = document.querySelector('.prev');
-        const nextBtn = document.querySelector('.next');
-        const reviews = document.querySelectorAll('.review-item');
-        const totalReviews = reviews.length;
+        const items = document.querySelectorAll('.carousel-item');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
 
-        function showReview(index) {
-            const offset = -index * 320; // Смещаем контейнер на ширину одного отзыва (с учетом отступа)
-            reviewsContainer.style.transform = `translateX(${offset}px)`;
+        function showItem(index) {
+            const totalItems = items.length;
+            if (index >= totalItems) currentIndex = 0;
+            if (index < 0) currentIndex = totalItems - 1;
+
+            items.forEach((item, i) => {
+                item.style.transform = `translateX(${(i - currentIndex) * 100}%)`;
+            });
         }
 
         prevBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex === 0) ? totalReviews - 1 : currentIndex - 1;
-            showReview(currentIndex);
+            currentIndex--;
+            showItem(currentIndex);
         });
 
         nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex === totalReviews - 1) ? 0 : currentIndex + 1;
-            showReview(currentIndex);
+            currentIndex++;
+            showItem(currentIndex);
         });
 
-        showReview(currentIndex); // Изначально отображаем первый отзыв
+        showItem(currentIndex);
     </script>
 </body>
 </html>
