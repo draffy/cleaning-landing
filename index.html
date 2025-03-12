@@ -25,75 +25,73 @@
             margin-bottom: 40px;
         }
 
-        /* Меню навигации */
-        nav {
-            margin-top: 15px;
+        section {
+            margin: 35px auto;
+            max-width: 1200px;
+            padding: 20px;
         }
 
-        .menu {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        /* СТАТИСТИКА */
+        .stats-container {
             display: flex;
-            justify-content: center;
-            gap: 20px;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: #f9f9f9;
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+            flex-wrap: wrap;
         }
 
-        .menu li {
-            position: relative;
+        .stat-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            box-sizing: border-box;
+            margin: 10px;
+        }
+
+        .stat-number {
+            color: #007bff;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .stat-title {
+            color: #6c757d;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            background-color: #eee;
+            border-radius: 5px;
+            padding: 5px;
             display: inline-block;
         }
 
-        .menu a {
-            text-decoration: none;
-            font-weight: bold;
-            color: #3CB371;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background 0.3s, color 0.3s;
-            display: block;
+        .stat-description {
+            font-size: 0.9rem;
         }
 
-        .menu a:hover {
-            background: #3CB371;
-            color: white;
+        @media (max-width: 768px) {
+            .stats-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .stat-card {
+                width: 90%;
+                margin-bottom: 15px;
+            }
         }
 
-        /* Выпадающее меню */
-        .submenu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            border-radius: 5px;
-            min-width: 200px;
+        /* ПРЕИМУЩЕСТВА */
+        #advantages {
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            padding: 20px;
         }
 
-        .submenu li {
-            display: block;
-        }
-
-        .submenu a {
-            padding: 10px;
-            white-space: nowrap;
-            color: #3CB371;
-            text-align: left;
-        }
-
-        .submenu a:hover {
-            background: #3CB371;
-            color: white;
-        }
-
-        .menu li:hover .submenu {
-            display: block;
-        }
-
+        /* Футер */
         footer {
             background-color: #3CB371;
             color: white;
@@ -117,30 +115,40 @@
     <header>
         <h1>Профессиональная уборка квартир перед сдачей в аренду!</h1>
         <h2>Чистота и порядок — залог успешной аренды!</h2>
-        <nav>
-            <ul class="menu">
-                <li>
-                    <a href="services.html">Услуги ▼</a>
-                    <ul class="submenu">
-                        <li><a href="cleaning.html">Уборка помещений</a></li>
-                        <li><a href="windows.html">Мытье окон и балконов</a></li>
-                        <li><a href="chemclean.html">Химчистка</a></li>
-                    </ul>
-                </li>
-                <li><a href="business.html">Для юр. лиц</a></li>
-                <li><a href="promo.html">Акции</a></li>
-                <li><a href="about.html">О нас</a></li>
-                <li><a href="reviews.html">Отзывы</a></li>
-                <li><a href="portfolio.html">Примеры работ</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
-            </ul>
-        </nav>
     </header>
 
     <section id="services">
         <p>Мы предлагаем качественные услуги по уборке квартир, которые готовятся к сдаче в аренду. Наша команда профессионалов обеспечит идеальную чистоту, чтобы ваши жильцы чувствовали себя комфортно и уютно.</p>
     </section>
 
+    <!-- Раздел со статистикой -->
+    <section id="stats">
+        <h3>Почему выбирают нас?</h3>
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-number">12+</div>
+                <div class="stat-title">опыт</div>
+                <div class="stat-description">Лет успешного опыта работы в клининге</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">20+</div>
+                <div class="stat-title">команда</div>
+                <div class="stat-description">Аттестованных специалистов в штате</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24/7</div>
+                <div class="stat-title">гибкость</div>
+                <div class="stat-description">Готовы выехать на объект даже ночью</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">60+</div>
+                <div class="stat-title">доверие</div>
+                <div class="stat-description">Довольных клиентов ежемесячно</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Преимущества -->
     <section id="advantages">
         <h3>Преимущества наших услуг</h3>
         <ul>
@@ -151,68 +159,9 @@
         </ul>
     </section>
 
-    <section id="process">
-        <h3>Процесс работы</h3>
-        <ol>
-            <li><strong>Заказ услуги:</strong> Заполните форму на сайте или позвоните нам.</li>
-            <li><strong>Оценка квартиры:</strong> Мы оценим состояние квартиры и предложим оптимальный план уборки.</li>
-            <li><strong>Уборка:</strong> Наша команда выполнит уборку с учетом всех ваших пожеланий.</li>
-            <li><strong>Проверка качества:</strong> Мы гарантируем высокое качество уборки и удовлетворение клиентов.</li>
-        </ol>
-    </section>
-
-    <section id="reviews">
-        <h3>Отзывы клиентов</h3>
-        <div class="carousel-container" id="carousel">
-            <div class="carousel-item">
-                <img src="client1.jpg" alt="Client 1">
-                <p>"Отличная работа! Квартира была в идеальном состоянии после уборки." — Анна, арендодатель.</p>
-            </div>
-            <div class="carousel-item">
-                <img src="client2.jpg" alt="Client 2">
-                <p>"Быстро, качественно и недорого! Рекомендую!" — Сергей, риэлтор.</p>
-            </div>
-            <div class="carousel-item">
-                <img src="client3.jpg" alt="Client 3">
-                <p>"Очень довольна результатом! Квартира блестела, и мы сдали её намного быстрее." — Екатерина, арендодатель.</p>
-            </div>
-        </div>
-        <button class="carousel-button carousel-button-prev" id="prevBtn">&#10094;</button>
-        <button class="carousel-button carousel-button-next" id="nextBtn">&#10095;</button>
-    </section>
-
     <footer>
         <h3>Контактная информация</h3>
         <p>Телефон: +7 (XXX) XXX-XX-XX</p>
     </footer>
-
-    <script>
-        let currentIndex = 0;
-        const items = document.querySelectorAll('.carousel-item');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-
-        function showItem(index) {
-            const totalItems = items.length;
-            if (index >= totalItems) currentIndex = 0;
-            if (index < 0) currentIndex = totalItems - 1;
-
-            items.forEach((item, i) => {
-                item.style.transform = `translateX(${(i - currentIndex) * 100}%)`;
-            });
-        }
-
-        prevBtn.addEventListener('click', () => {
-            currentIndex--;
-            showItem(currentIndex);
-        });
-
-        nextBtn.addEventListener('click', () => {
-            currentIndex++;
-            showItem(currentIndex);
-        });
-
-        showItem(currentIndex);
-    </script>
 </body>
 </html>
