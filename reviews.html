@@ -4,14 +4,114 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Отзывы клиентов</title>
+  <link rel="stylesheet" href="styles.css">
   <style>
+    /* Общие стили */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #f8f8f8;
+      margin-bottom: 40px;
+    }
+
+    /* Меню навигации */
+    nav {
+      margin-top: 15px;
+    }
+
+    .menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .menu li {
+      position: relative;
+      display: inline-block;
+    }
+
+    .menu a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #3CB371;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background 0.3s, color 0.3s;
+      display: block;
+    }
+
+    .menu a:hover {
+      background: #3CB371;
+      color: white;
+    }
+
+    /* Выпадающее меню */
+    .submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-radius: 5px;
+      min-width: 200px;
+    }
+
+    .submenu li {
+      display: block;
+    }
+
+    .submenu a {
+      padding: 10px;
+      white-space: nowrap;
+      color: #3CB371;
+      text-align: left;
+    }
+
+    .submenu a:hover {
+      background: #3CB371;
+      color: white;
+    }
+
+    .menu li:hover .submenu {
+      display: block;
+    }
+
+    footer {
+      background-color: #3CB371;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    footer a {
+      color: #28a745;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Стили для отзывов */
     .container {
       width: 90%;
       max-width: 1200px;
@@ -94,12 +194,25 @@
   </style>
 </head>
 <body>
-
   <header>
+    <h1>Профессиональная уборка квартир перед сдачей в аренду!</h1>
+    <h2>Чистота и порядок — залог успешной аренды!</h2>
     <nav>
-      <ul>
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="review.html">Отзывы</a></li>
+      <ul class="menu">
+        <li>
+          <a href="services.html">Услуги ▼</a>
+          <ul class="submenu">
+            <li><a href="cleaning.html">Уборка помещений</a></li>
+            <li><a href="windows.html">Мытье окон и балконов</a></li>
+            <li><a href="chemclean.html">Химчистка</a></li>
+          </ul>
+        </li>
+        <li><a href="business.html">Для юр. лиц</a></li>
+        <li><a href="promo.html">Акции</a></li>
+        <li><a href="about.html">О нас</a></li>
+        <li><a href="reviews.html">Отзывы</a></li> <!-- Здесь добавлена ссылка на страницу с отзывами -->
+        <li><a href="portfolio.html">Примеры работ</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
       </ul>
     </nav>
   </header>
@@ -138,8 +251,8 @@
   </div>
 
   <footer>
-    <p>© 2024 Все права защищены</p>
+    <h3>Контактная информация</h3>
+    <p>Телефон: +7 (XXX) XXX-XX-XX</p>
   </footer>
-
 </body>
 </html>
