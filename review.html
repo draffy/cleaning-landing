@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Отзывы клиентов</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .reviews-section {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px 0;
+      justify-content: center;
+    }
+
+    .review-card {
+      background-color: #333;
+      color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 10px;
+      width: 300px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .review-author {
+      font-weight: bold;
+    }
+
+    .review-date {
+      font-size: 0.8em;
+      color: #ddd;
+    }
+
+    .review-stars {
+      color: gold;
+    }
+
+    .review-content {
+      margin-bottom: 15px;
+    }
+
+    .review-actions {
+      font-size: 0.9em;
+      color: #bbb;
+    }
+
+    /* Scrollbar styles (optional) */
+    .reviews-section::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .reviews-section::-webkit-scrollbar-track {
+      background: #666;
+      border-radius: 4px;
+    }
+
+    .reviews-section::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 4px;
+    }
+
+    .reviews-section::-webkit-scrollbar-thumb:hover {
+      background: #999;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .reviews-section {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Отзывы клиентов</h1>
+    <div class="reviews-section">
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-author">Имя Автора</div>
+        </div>
+        <div class="review-date">★★★★★ 31 марта 2024</div>
+        <div class="review-content">
+          Я хотела бы поделиться своим положительным опытом работы с клининговой компанией Cleanclean.
+        </div>
+        <div class="review-actions">
+          <span>👍 Полезно</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <div class="review-author">Имя Автора 2</div>
+        </div>
+        <div class="review-date">★★★★★ 1 апреля 2024</div>
+        <div class="review-content">
+          Еще один отзыв о работе компании. Очень доволен результатом!
+        </div>
+        <div class="review-actions">
+          <span>👍 Полезно</span>
+        </div>
+      </div>
+
+      <!-- Добавьте больше отзывов по мере необходимости -->
+    </div>
+  </div>
+</body>
+</html>
