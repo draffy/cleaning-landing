@@ -111,6 +111,70 @@
         footer a:hover {
             text-decoration: underline;
         }
+
+        /* Статистика */
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap; /* Делаем элементы гибкими */
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .stat-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            box-sizing: border-box;
+            margin: 10px;
+        }
+
+        .stat-number {
+            color: #007bff;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .stat-title {
+            color: #6c757d;
+            font-size: 0.8em;
+            margin-bottom: 10px;
+            background-color: #eee;
+            border-radius: 5px;
+            padding: 5px;
+            display: inline-block;
+        }
+
+        .stat-description {
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .stat-card {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stat-card {
+                width: 100%;
+            }
+
+            .stat-number {
+                font-size: 1.5em;
+            }
+
+            .stat-title {
+                font-size: 0.7em;
+            }
+
+            .stat-description {
+                font-size: 0.8em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -139,6 +203,32 @@
 
     <section id="services">
         <p>Мы предлагаем качественные услуги по уборке квартир, которые готовятся к сдаче в аренду. Наша команда профессионалов обеспечит идеальную чистоту, чтобы ваши жильцы чувствовали себя комфортно и уютно.</p>
+    </section>
+
+    <!-- Новый раздел с статистикой -->
+    <section id="statistics">
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-number">12+</div>
+                <div class="stat-title">опыт</div>
+                <div class="stat-description">Лет успешного опыта работы в клининге</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">20+</div>
+                <div class="stat-title">команда</div>
+                <div class="stat-description">Аттестованных специалистов в штате</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24/7</div>
+                <div class="stat-title">гибкость</div>
+                <div class="stat-description">Готовы выехать на объект даже ночью</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">60+</div>
+                <div class="stat-title">доверие</div>
+                <div class="stat-description">Довольных клиентов ежемесячно</div>
+            </div>
+        </div>
     </section>
 
     <section id="advantages">
