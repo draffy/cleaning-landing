@@ -39,8 +39,9 @@
 
         .reviews-container {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             gap: 20px;
+            transition: transform 0.5s ease;
         }
 
         .review-item {
@@ -51,6 +52,8 @@
             border-radius: 8px;
             background-color: #f9f9f9;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            min-width: 300px;
+            justify-content: center;
         }
 
         .review-img {
@@ -70,6 +73,27 @@
 
         .review-text p {
             margin: 0;
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.3);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            z-index: 1;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
         }
 
         /* Стили для остальных секций */
@@ -143,25 +167,29 @@
     
     <section id="reviews">
         <h3>Отзывы клиентов</h3>
-        <div class="reviews-container">
-            <div class="review-item">
-                <img src="client1.jpg" alt="Анна, арендодатель" class="review-img">
-                <div class="review-text">
-                    <p>"Отличная работа! Квартира была в идеальном состоянии после уборки." — Анна, арендодатель.</p>
+        <div class="reviews-carousel">
+            <button class="carousel-arrow prev">←</button>
+            <div class="reviews-container">
+                <div class="review-item">
+                    <img src="client1.jpg" alt="Анна, арендодатель" class="review-img">
+                    <div class="review-text">
+                        <p>"Отличная работа! Квартира была в идеальном состоянии после уборки." — Анна, арендодатель.</p>
+                    </div>
+                </div>
+                <div class="review-item">
+                    <img src="client2.jpg" alt="Сергей, риэлтор" class="review-img">
+                    <div class="review-text">
+                        <p>"Быстро, качественно и недорого! Рекомендую!" — Сергей, риэлтор.</p>
+                    </div>
+                </div>
+                <div class="review-item">
+                    <img src="client3.jpg" alt="Екатерина, арендодатель" class="review-img">
+                    <div class="review-text">
+                        <p>"Очень довольна результатом! Квартира блестела, и мы сдали её намного быстрее." — Екатерина, арендодатель.</p>
+                    </div>
                 </div>
             </div>
-            <div class="review-item">
-                <img src="client2.jpg" alt="Сергей, риэлтор" class="review-img">
-                <div class="review-text">
-                    <p>"Быстро, качественно и недорого! Рекомендую!" — Сергей, риэлтор.</p>
-                </div>
-            </div>
-            <div class="review-item">
-                <img src="client3.jpg" alt="Екатерина, арендодатель" class="review-img">
-                <div class="review-text">
-                    <p>"Очень довольна результатом! Квартира блестела, и мы сдали её намного быстрее." — Екатерина, арендодатель.</p>
-                </div>
-            </div>
+            <button class="carousel-arrow next">→</button>
         </div>
     </section>
     
@@ -188,31 +216,28 @@
 
     <script>
         let currentIndex = 0;
-        const items = document.querySelectorAll('.carousel-item');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
+        const reviewsContainer = document.querySelector('.reviews-container');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        const reviews = document.querySelectorAll('.review-item');
+        const totalReviews = reviews.length;
 
-        function showItem(index) {
-            const totalItems = items.length;
-            if (index >= totalItems) currentIndex = 0;
-            if (index < 0) currentIndex = totalItems - 1;
-
-            items.forEach((item, i) => {
-                item.style.transform = `translateX(${(i - currentIndex) * 100}%)`;
-            });
+        function showReview(index) {
+            const offset = -index * 320; // Смещаем контейнер на ширину одного отзыва (с учетом отступа)
+            reviewsContainer.style.transform = `translateX(${offset}px)`;
         }
 
         prevBtn.addEventListener('click', () => {
-            currentIndex--;
-            showItem(currentIndex);
+            currentIndex = (currentIndex === 0) ? totalReviews - 1 : currentIndex - 1;
+            showReview(currentIndex);
         });
 
         nextBtn.addEventListener('click', () => {
-            currentIndex++;
-            showItem(currentIndex);
+            currentIndex = (currentIndex === totalReviews - 1) ? 0 : currentIndex + 1;
+            showReview(currentIndex);
         });
 
-        showItem(currentIndex);
+        showReview(currentIndex); // Изначально отображаем первый отзыв
     </script>
 </body>
 </html>

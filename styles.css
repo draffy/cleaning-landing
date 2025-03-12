@@ -69,15 +69,16 @@ input, textarea {
 }
 
 footer {
-    background-color: #333;
+    background: linear-gradient(90deg, #007BFF, #0056b3); /* Фон футера теперь такой же, как у хедера */
     color: white;
     text-align: center;
     padding: 20px;
     margin-top: 20px;
+    font-family: 'Inter', sans-serif; /* Шрифт футера такой же, как в хедере */
 }
 
 footer a {
-    color: #007BFF;
+    color: white;
     text-decoration: none;
     font-weight: bold;
 }
@@ -86,10 +87,20 @@ footer a:hover {
     text-decoration: underline;
 }
 
+.reviews-carousel {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+}
+
 .reviews-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 20px;
+    transition: transform 0.5s ease;
 }
 
 .review-item {
@@ -100,6 +111,8 @@ footer a:hover {
     border-radius: 8px;
     background-color: #f9f9f9;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 300px;
+    justify-content: center;
 }
 
 .review-img {
@@ -121,7 +134,27 @@ footer a:hover {
     margin: 0;
 }
 
-/* Медиазапросы для мобильных устройств */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 1;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
 @media (max-width: 768px) {
     .reviews-container {
         flex-direction: column;
