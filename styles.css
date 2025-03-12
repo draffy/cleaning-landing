@@ -1,29 +1,142 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
 
 body {
+    background: url('cleaning-background.jpg') no-repeat center center fixed;
+    background-size: cover;
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
-    background: url('cleaning-background.jpg') no-repeat center center fixed;
-    background-size: cover;
 }
 
-/* ... Остальной код без изменений ... */
+header {
+    background: linear-gradient(90deg, #007BFF, #0056b3);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 24px;
+}
 
-/* Медиазапросы для адаптивности */
+h1, h2 {
+    margin: 10px 0;
+}
+
+section {
+    background: white;
+    margin: 20px auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+h3 {
+    color: #007BFF;
+}
+
+ul, ol {
+    padding-left: 20px;
+}
+
+li {
+    margin: 10px 0;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.reviews-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.review-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.review-img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.review-text {
+    max-width: 600px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+}
+
+.review-text p {
+    margin: 0;
+}
+
+/* Медиазапросы для мобильных устройств */
 @media (max-width: 768px) {
-    body {
-        font-size: 14px;
+    .reviews-container {
+        flex-direction: column;
     }
 
-    section {
-        width: 95%;
-        padding: 20px;
+    .review-item {
+        flex-direction: column;
+        text-align: center;
     }
 
-    button {
-        padding: 10px 20px;
-        font-size: 14px;
+    .review-img {
+        margin-bottom: 10px;
+    }
+
+    .review-text {
+        max-width: 100%;
     }
 }

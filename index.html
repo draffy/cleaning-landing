@@ -16,102 +16,97 @@
             overflow-x: hidden; /* Убираем горизонтальную прокрутку */
             display: flex;
             flex-direction: column;
-            background: url('cleaning-background.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #333;
         }
 
         header {
-            background: linear-gradient(90deg, #007BFF, #0056b3);
-            color: white;
             text-align: center;
-            padding: 40px 20px;
-            font-size: 24px;
-        }
-
-        h1, h2 {
-            margin: 10px 0;
+            padding: 20px;
+            background-color: #f8f8f8;
+            margin-bottom: 40px; /* Увеличен отступ снизу */
         }
 
         section {
-            background: white;
-            margin: 20px auto;
-            padding: 30px;
-            width: 90%;
-            max-width: 800px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: left;
-        }
-
-        h3 {
-            color: #007BFF;
-        }
-
-        ul, ol {
-            padding-left: 20px;
-        }
-
-        li {
-            margin: 10px 0;
-        }
-
-        button {
-            background-color: #007BFF;
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 5px 0 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
+            margin: 35px auto; /* Отступы по 35px сверху и снизу */
+            max-width: 1200px;
             padding: 20px;
-            margin-top: 20px;
+        }
+
+        /* Карусель отзывов */
+        #reviews {
+            margin-top: 30px;
+            padding: 20px;
+        }
+
+        .reviews-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .review-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .review-text {
+            max-width: 600px;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .review-text p {
+            margin: 0;
+        }
+
+        /* Стили для остальных секций */
+        footer {
+            margin-top: 40px; /* Увеличен отступ сверху */
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-top: 1px solid #ddd;
+            text-align: center;
         }
 
         footer a {
-            color: #007BFF;
             text-decoration: none;
-            font-weight: bold;
+            color: #007bff;
         }
 
         footer a:hover {
             text-decoration: underline;
         }
 
-        /* Медиазапросы для адаптивности */
+        /* Медиазапросы для мобильных устройств */
         @media (max-width: 768px) {
-            body {
-                font-size: 14px;
+            .reviews-container {
+                flex-direction: column;
             }
 
-            section {
-                width: 95%;
-                padding: 20px;
+            .review-item {
+                flex-direction: column;
+                text-align: center;
             }
 
-            button {
-                padding: 10px 20px;
-                font-size: 14px;
+            .review-img {
+                margin-bottom: 10px;
+            }
+
+            .review-text {
+                max-width: 100%;
             }
         }
     </style>
@@ -148,27 +143,31 @@
     
     <section id="reviews">
         <h3>Отзывы клиентов</h3>
-        <div class="carousel-container" id="carousel">
-            <div class="carousel-item">
-                <img src="client1.jpg" alt="Анна, арендодатель">
-                <p>"Отличная работа! Квартира была в идеальном состоянии после уборки." — Анна, арендодатель.</p>
+        <div class="reviews-container">
+            <div class="review-item">
+                <img src="client1.jpg" alt="Анна, арендодатель" class="review-img">
+                <div class="review-text">
+                    <p>"Отличная работа! Квартира была в идеальном состоянии после уборки." — Анна, арендодатель.</p>
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="client2.jpg" alt="Сергей, риэлтор">
-                <p>"Быстро, качественно и недорого! Рекомендую!" — Сергей, риэлтор.</p>
+            <div class="review-item">
+                <img src="client2.jpg" alt="Сергей, риэлтор" class="review-img">
+                <div class="review-text">
+                    <p>"Быстро, качественно и недорого! Рекомендую!" — Сергей, риэлтор.</p>
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="client3.jpg" alt="Екатерина, арендодатель">
-                <p>"Очень довольна результатом! Квартира блестела, и мы сдали её намного быстрее." — Екатерина, арендодатель.</p>
+            <div class="review-item">
+                <img src="client3.jpg" alt="Екатерина, арендодатель" class="review-img">
+                <div class="review-text">
+                    <p>"Очень довольна результатом! Квартира блестела, и мы сдали её намного быстрее." — Екатерина, арендодатель.</p>
+                </div>
             </div>
         </div>
-        <button class="carousel-button carousel-button-prev" id="prevBtn">&#10094;</button>
-        <button class="carousel-button carousel-button-next" id="nextBtn">&#10095;</button>
     </section>
     
     <section id="contact-form">
         <h3>Заполните форму ниже, чтобы получить бесплатную консультацию!</h3>
-        <form method="POST" action="send_mail.php">
+        <form>
             <label>Имя: <input type="text" name="name" required></label><br>
             <label>Телефон: <input type="tel" name="phone" required></label><br>
             <label>Email: <input type="email" name="email" required></label><br>
