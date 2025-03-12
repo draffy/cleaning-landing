@@ -5,17 +5,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Уборка квартир перед сдачей</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Общие стили для страницы */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            min-height: 100vh; /* Устанавливаем минимальную высоту */
+            overflow-x: hidden; /* Убираем горизонтальную прокрутку */
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f8f8;
+            margin-bottom: 40px; /* Увеличен отступ снизу */
+        }
+
+        section {
+            margin: 35px auto; /* Отступы по 35px сверху и снизу */
+            max-width: 1200px;
+            padding: 20px;
+        }
+
+        /* Карусель отзывов */
+        #reviews {
+            position: relative;
+            max-width: 1200px; /* Теперь блок с отзывами имеет ту же ширину, что и другие блоки */
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            margin-bottom: 40px; /* Добавлен отступ снизу */
+        }
+
+        .carousel-container {
+            display: flex;
+            overflow: hidden;
+            align-items: center;
+        }
+
+        .carousel-item {
+            display: flex;
+            align-items: center;
+            margin: 10px;
+            flex-shrink: 0;
+            width: 100%; /* Каждая карточка занимает 100% ширины контейнера */
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item img {
+            border-radius: 50%;
+            width: 180px; /* Уменьшен размер фото до 180px */
+            height: 180px; /* Высота также 180px */
+            margin-right: 50px; /* Отодвинул фото на 30px от стрелок (предыдущий был 20px, теперь 50px) */
+        }
+
+        .carousel-item p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .carousel-button-prev {
+            left: 10px;
+        }
+
+        .carousel-button-next {
+            right: 10px;
+        }
+
+        /* Стили для остальных секций */
+        footer {
+            margin-top: 40px; /* Увеличен отступ сверху */
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-top: 1px solid #ddd;
+            text-align: center;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Профессиональная уборка квартир перед сдачей в аренду!</h1>
         <h2>Чистота и порядок — залог успешной аренды!</h2>
     </header>
-
+    
     <section id="services">
         <p>Мы предлагаем качественные услуги по уборке квартир, которые готовятся к сдаче в аренду. Наша команда профессионалов обеспечит идеальную чистоту, чтобы ваши жильцы чувствовали себя комфортно и уютно.</p>
     </section>
-
+    
     <section id="advantages">
         <h3>Преимущества наших услуг</h3>
         <ul>
@@ -25,7 +123,7 @@
             <li><strong>Скидки для постоянных клиентов:</strong> Специальные предложения для арендодателей и риэлторов.</li>
         </ul>
     </section>
-
+    
     <section id="process">
         <h3>Процесс работы</h3>
         <ol>
@@ -35,32 +133,30 @@
             <li><strong>Проверка качества:</strong> Мы гарантируем высокое качество уборки и удовлетворение клиентов.</li>
         </ol>
     </section>
-
+    
     <section id="reviews">
         <h3>Отзывы клиентов</h3>
-        <div class="carousel-container">
-            <div class="carousel">
-                <div class="carousel-item">
-                    <img src="client1.jpg" alt="Клиент 1">
-                    <p>"Отличная работа! Квартира была в идеальном состоянии после уборки." — Анна, арендодатель.</p>
-                </div>
-                <div class="carousel-item">
-                    <img src="client2.jpg" alt="Клиент 2">
-                    <p>"Быстро, качественно и недорого! Рекомендую!" — Сергей, риэлтор.</p>
-                </div>
-                <div class="carousel-item">
-                    <img src="client3.jpg" alt="Клиент 3">
-                    <p>"Очень довольна результатом! Все чисто и аккуратно." — Марина, арендодатель.</p>
-                </div>
+        <div class="carousel-container" id="carousel">
+            <div class="carousel-item">
+                <img src="client1.jpg" alt="Client 1">
+                <p>"Отличная работа! Квартира была в идеальном состоянии после уборки." — Анна, арендодатель.</p>
             </div>
-            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            <div class="carousel-item">
+                <img src="client2.jpg" alt="Client 2">
+                <p>"Быстро, качественно и недорого! Рекомендую!" — Сергей, риэлтор.</p>
+            </div>
+            <div class="carousel-item">
+                <img src="client3.jpg" alt="Client 3">
+                <p>"Очень довольна результатом! Квартира блестела, и мы сдали её намного быстрее." — Екатерина, арендодатель.</p>
+            </div>
         </div>
+        <button class="carousel-button carousel-button-prev" id="prevBtn">&#10094;</button>
+        <button class="carousel-button carousel-button-next" id="nextBtn">&#10095;</button>
     </section>
-
+    
     <section id="contact-form">
         <h3>Заполните форму ниже, чтобы получить бесплатную консультацию!</h3>
-        <form action="send_mail.php" method="POST">
+        <form>
             <label>Имя: <input type="text" name="name" required></label><br>
             <label>Телефон: <input type="tel" name="phone" required></label><br>
             <label>Email: <input type="email" name="email" required></label><br>
@@ -68,15 +164,44 @@
             <button type="submit">Отправить</button>
         </form>
     </section>
-
+    
     <footer>
         <h3>Контактная информация</h3>
         <p>Телефон: +7 (XXX) XXX-XX-XX</p>
         <p>Email: info@chisto-pro.ru</p>
         <p>Адрес: ул. Примерная, д. 1, г. Москва</p>
-
+        
         <h3>Мы в соцсетях</h3>
         <a href="#">Instagram</a> | <a href="#">Facebook</a>
     </footer>
+
+    <script>
+        let currentIndex = 0;
+        const items = document.querySelectorAll('.carousel-item');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function showItem(index) {
+            const totalItems = items.length;
+            if (index >= totalItems) currentIndex = 0;
+            if (index < 0) currentIndex = totalItems - 1;
+
+            items.forEach((item, i) => {
+                item.style.transform = `translateX(${(i - currentIndex) * 100}%)`;
+            });
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex--;
+            showItem(currentIndex);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex++;
+            showItem(currentIndex);
+        });
+
+        showItem(currentIndex);
+    </script>
 </body>
 </html>
