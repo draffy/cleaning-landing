@@ -69,16 +69,20 @@ input, textarea {
 }
 
 footer {
-    background: linear-gradient(90deg, #007BFF, #0056b3); /* Фон футера теперь такой же, как у хедера */
-    color: white;
+    background-color: #3CB371; /* Заданный фон футера — зелёный */
+    color: #333; /* Цвет текста по умолчанию — тёмно-серый */
     text-align: center;
     padding: 20px;
     margin-top: 20px;
     font-family: 'Inter', sans-serif; /* Шрифт футера такой же, как в хедере */
 }
 
+footer h3, footer p {
+    color: #333; /* Текст в футере — тёмно-серый */
+}
+
 footer a {
-    color: white;
+    color: #007BFF; /* Ссылки по умолчанию — синие */
     text-decoration: none;
     font-weight: bold;
 }
@@ -87,89 +91,59 @@ footer a:hover {
     text-decoration: underline;
 }
 
-.reviews-carousel {
+#reviews {
     position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.carousel-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
-    width: 100%;
+    align-items: center;
 }
 
-.reviews-container {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    transition: transform 0.5s ease;
-}
-
-.review-item {
+.carousel-item {
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 10px;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    min-width: 300px;
-    justify-content: center;
+    margin: 10px;
+    flex-shrink: 0;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
 }
 
-.review-img {
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
+.carousel-item img {
     border-radius: 50%;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    width: 180px; /* Размер фото 180px */
+    height: 180px;
+    margin-right: 50px; /* Отступ от фото до текста */
 }
 
-.review-text {
-    max-width: 600px;
+.carousel-item p {
     font-size: 16px;
     line-height: 1.5;
-    color: #555;
 }
 
-.review-text p {
-    margin: 0;
-}
-
-.carousel-arrow {
+.carousel-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
     padding: 10px;
     cursor: pointer;
     font-size: 18px;
-    z-index: 1;
 }
 
-.prev {
+.carousel-button-prev {
     left: 10px;
 }
 
-.next {
+.carousel-button-next {
     right: 10px;
-}
-
-@media (max-width: 768px) {
-    .reviews-container {
-        flex-direction: column;
-    }
-
-    .review-item {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .review-img {
-        margin-bottom: 10px;
-    }
-
-    .review-text {
-        max-width: 100%;
-    }
 }
