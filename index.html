@@ -91,6 +91,87 @@
             padding: 20px;
         }
 
+        /* Раздел с услугами */
+        .services-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .service-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px;
+            text-align: left;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 300px;
+            box-sizing: border-box;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .service-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .service-title {
+            color: #343a40;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .service-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 10px;
+        }
+
+        .service-list li {
+            color: #6c757d;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+
+        .service-price {
+            color: #28a745;
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .services-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service-card {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .service-card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+        }
+
         /* Футер */
         footer {
             background-color: #3CB371;
@@ -144,6 +225,57 @@
                 <div class="stat-number">60+</div>
                 <div class="stat-title">доверие</div>
                 <div class="stat-description">Довольных клиентов ежемесячно</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Раздел с услугами -->
+    <section id="our-services">
+        <h3>Чем мы можем помочь</h3>
+        <div class="services-container">
+            <div class="service-card">
+                <img src="URL_ИЗОБРАЖЕНИЯ_УБОРКИ" alt="Уборка помещений" class="service-image">
+                <div class="service-title">Уборка помещений</div>
+                <ul class="service-list">
+                    <li>Генеральная</li>
+                    <li>После ремонта, ЧП</li>
+                    <li>Поддерживающая</li>
+                    <li>Регулярная</li>
+                </ul>
+                <div class="service-price">от 60 ₽ / м2</div>
+            </div>
+            <div class="service-card">
+                <img src="URL_ИЗОБРАЖЕНИЯ_МОЙКИ_ОКОН" alt="Мытье окон и балконов" class="service-image">
+                <div class="service-title">Мытье окон и балконов</div>
+                <ul class="service-list">
+                    <li>Окна с двух сторон</li>
+                    <li>Москитные сетки</li>
+                    <li>Жалюзи</li>
+                    <li>Панорамные окна</li>
+                </ul>
+                <div class="service-price">300 ₽ / створка</div>
+            </div>
+            <div class="service-card">
+                <img src="URL_ИЗОБРАЖЕНИЯ_ХИМЧИСТКИ" alt="Химчистка" class="service-image">
+                <div class="service-title">Химчистка</div>
+                <ul class="service-list">
+                    <li>Мягкая мебель</li>
+                    <li>Ковровые покрытия</li>
+                    <li>Матрасы</li>
+                </ul>
+                <div class="service-price">от 190 ₽ / м2</div>
+            </div>
+            <div class="service-card">
+                <img src="URL_ИЗОБРАЖЕНИЯ_ОЗОНИРОВАНИЯ" alt="Озонирование" class="service-image">
+                <div class="service-title">Озонирование</div>
+                <p>Стерилизация воздуха и поверхностей и его очистка от загрязнений</p>
+                <div class="service-price">60 ₽ / м2</div>
+            </div>
+            <div class="service-card">
+                <img src="URL_ИЗОБРАЖЕНИЯ_МЫТЬЯ_ФАСАДОВ" alt="Мытье фасадов" class="service-image">
+                <div class="service-title">Мытье фасадов</div>
+                <p>Удаление ржавчины, сложных загрязнений, пыли, копоти, последствий строительных работ</p>
+                <div class="service-price">от 500 ₽ / м2</div>
             </div>
         </div>
     </section>
