@@ -1,88 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
-
-body {
-    background: url('cleaning-background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
+/* Стиль для блока с отзывами */
+#reviews {
+    margin-top: 35px;
+    margin-bottom: 35px;
 }
 
-
-header {
-    background: linear-gradient(90deg, #007BFF, #0056b3);
-    color: white;
-    text-align: center;
-    padding: 40px 20px;
-    font-size: 24px;
-}
-
-h1, h2 {
-    margin: 10px 0;
-}
-
-section {
-    background: white;
-    margin: 20px auto;
-    padding: 30px;
-    width: 90%;
-    max-width: 800px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: left;
-}
-
-h3 {
-    color: #007BFF;
-}
-
-ul, ol {
-    padding-left: 20px;
-}
-
-li {
-    margin: 10px 0;
-}
-
-button {
-    background-color: #007BFF;
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: 0.3s;
-}
-
-button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-}
-
-input, textarea {
+/* Карусель */
+.carousel-container {
+    position: relative;
     width: 100%;
-    padding: 10px;
-    margin: 5px 0 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
-footer {
-    background-color: #333;
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 15px;
+}
+
+.carousel-item img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;  /* Круглая форма */
+    margin-right: 30px; /* Отступ между изображением и текстом */
+}
+
+.carousel-item p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Стиль для стрелок */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 20px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 1000;
 }
 
-footer a {
-    color: #007BFF;
-    text-decoration: none;
-    font-weight: bold;
+.prev {
+    left: 10px;
 }
 
-footer a:hover {
-    text-decoration: underline;
+.next {
+    right: 10px;
+}
+
+/* Отступы между секциями */
+section {
+    margin-bottom: 35px;
 }
