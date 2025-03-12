@@ -18,14 +18,22 @@
             flex-direction: column;
         }
 
+        /* Закрепление header */
         header {
             text-align: center;
             padding: 20px;
             background-color: #f8f8f8;
             margin-bottom: 40px;
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%; /* Уменьшаем ширину header */
+            z-index: 10;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
-        /* Меню навигации */
+        /* Навигационное меню */
         nav {
             margin-top: 15px;
         }
@@ -116,34 +124,33 @@
         .stats-container {
             display: flex;
             justify-content: space-between;
-            flex-wrap: wrap; /* Добавлено для мобильной адаптивности */
+            flex-wrap: wrap;
             gap: 20px;
             padding: 20px;
             background-color: #f9f9f9;
-            margin-bottom: 40px; /* Добавлен отступ снизу для разделения с следующим блоком */
+            margin-top: 120px; /* Добавлен отступ сверху, чтобы блок не перекрывался фиксированным header */
+            margin-bottom: 40px;
         }
 
-        /* Стили для каждого блока статистики */
         .stat-card {
             background-color: #fff;
             border-radius: 10px;
             padding: 20px;
             text-align: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            width: calc(25% - 20px); /* Блоки занимают 25% ширины с учетом промежутков */
+            width: calc(25% - 20px);
             box-sizing: border-box;
         }
 
-        /* Стили для мобильных устройств */
         @media (max-width: 768px) {
             .stat-card {
-                width: calc(50% - 20px); /* На планшетах блоки занимают 50% ширины */
+                width: calc(50% - 20px);
             }
         }
 
         @media (max-width: 480px) {
             .stat-card {
-                width: 100%; /* На мобильных устройствах блоки занимают 100% ширины */
+                width: 100%;
             }
         }
 
@@ -167,10 +174,10 @@
             font-size: 0.9em;
         }
 
-        /* Блок с услугами */
+        /* Стили для других блоков */
         #services {
             padding: 20px;
-            margin-bottom: 40px; /* Добавлен отступ снизу для разделения */
+            margin-bottom: 40px;
         }
     </style>
 </head>
@@ -225,46 +232,6 @@
 
     <section id="services">
         <p>Мы предлагаем качественные услуги по уборке квартир, которые готовятся к сдаче в аренду. Наша команда профессионалов обеспечит идеальную чистоту, чтобы ваши жильцы чувствовали себя комфортно и уютно.</p>
-    </section>
-
-    <section id="advantages">
-        <h3>Преимущества наших услуг</h3>
-        <ul>
-            <li><strong>Быстро и качественно:</strong> Мы понимаем, что время — деньги, поэтому работаем быстро и эффективно.</li>
-            <li><strong>Экологичные средства:</strong> Используем только безопасные для здоровья моющие средства.</li>
-            <li><strong>Гибкий график:</strong> Уборка в любое время, включая выходные и праздники.</li>
-            <li><strong>Скидки для постоянных клиентов:</strong> Специальные предложения для арендодателей и риэлторов.</li>
-        </ul>
-    </section>
-
-    <section id="process">
-        <h3>Процесс работы</h3>
-        <ol>
-            <li><strong>Заказ услуги:</strong> Заполните форму на сайте или позвоните нам.</li>
-            <li><strong>Оценка квартиры:</strong> Мы оценим состояние квартиры и предложим оптимальный план уборки.</li>
-            <li><strong>Уборка:</strong> Наша команда выполнит уборку с учетом всех ваших пожеланий.</li>
-            <li><strong>Проверка качества:</strong> Мы гарантируем высокое качество уборки и удовлетворение клиентов.</li>
-        </ol>
-    </section>
-
-    <section id="reviews">
-        <h3>Отзывы клиентов</h3>
-        <div class="carousel-container" id="carousel">
-            <div class="carousel-item">
-                <img src="client1.jpg" alt="Client 1">
-                <p>"Отличная работа! Квартира была в идеальном состоянии после уборки." — Анна, арендодатель.</p>
-            </div>
-            <div class="carousel-item">
-                <img src="client2.jpg" alt="Client 2">
-                <p>"Быстро, качественно и недорого! Рекомендую!" — Сергей, риэлтор.</p>
-            </div>
-            <div class="carousel-item">
-                <img src="client3.jpg" alt="Client 3">
-                <p>"Очень довольна результатом! Квартира блестела, и мы сдали её намного быстрее." — Екатерина, арендодатель.</p>
-            </div>
-        </div>
-        <button class="carousel-button carousel-button-prev" id="prevBtn">&#10094;</button>
-        <button class="carousel-button carousel-button-next" id="nextBtn">&#10095;</button>
     </section>
 
     <footer>
