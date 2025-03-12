@@ -4,7 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Услуги уборки для аренды - DraffyCleaning</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">  <!-- Исправлено имя файла стилей -->
+    <style> /* Стили карусели */
+        .carousel {
+            width: 100%;
+            max-width: 800px;
+            margin: 40px auto;
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.5s ease;
+            background: #f8f9fa;
+        }
+        .carousel-item {
+            flex: 0 0 100%;
+            padding: 40px 20px;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .customer-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+        .carousel-text {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+        .author-info {
+            margin-top: 15px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(44, 62, 80, 0.8);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 24px;
+            transition: background 0.3s ease;
+        }
+        .carousel-button:hover {
+            background-color: #2c3e50;
+        }
+        .carousel-button-left {
+            left: 20px;
+        }
+        .carousel-button-right {
+            right: 20px;
+        }
+    </style>
 </head>
 <body>
 
@@ -73,73 +140,6 @@
     <p>&copy; 2025 DraffyCleaning</p>
 </footer>
 
-<style>
-        .carousel {
-            width: 100%;
-            max-width: 800px;
-            margin: 40px auto;
-            overflow: hidden;
-            position: relative;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        .carousel-wrapper {
-            display: flex;
-            transition: transform 0.5s ease;
-            background: #f8f9fa;
-        }
-        .carousel-item {
-            flex: 0 0 100%;
-            padding: 40px 20px;
-            min-height: 250px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .customer-photo {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            object-fit: cover;
-        }
-        .carousel-text {
-            font-size: 18px;
-            color: #333;
-            line-height: 1.6;
-            max-width: 600px;
-            margin: 0 auto;
-            font-style: italic;
-        }
-        .author-info {
-            margin-top: 15px;
-            font-weight: 600;
-            color: #2c3e50;
-        }
-        .carousel-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(44, 62, 80, 0.8);
-            color: white;
-            border: none;
-            padding: 15px 20px;
-            cursor: pointer;
-            border-radius: 50%;
-            font-size: 24px;
-            transition: background 0.3s ease;
-        }
-        .carousel-button:hover {
-            background-color: #2c3e50;
-        }
-        .carousel-button-left {
-            left: 20px;
-        }
-        .carousel-button-right {
-            right: 20px;
-        }
-</style>
 <script>
     let currentIndex = 0;
     const items = document.querySelectorAll('.carousel-item');
