@@ -3,64 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Уборка квартир перед сдачей</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Услуги уборки для аренды - Отзывы</title>
+    <style>
+        .carousel {
+            width: 100%;
+            max-width: 800px;
+            margin: 40px auto;
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .carousel-wrapper {
+            display: flex;
+            transition: transform 0.5s ease;
+            background: #f8f9fa;
+        }
+        .carousel-item {
+            flex: 0 0 100%;
+            padding: 40px 20px;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .customer-photo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+        .carousel-text {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+        .author-info {
+            margin-top: 15px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(44, 62, 80, 0.8);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 24px;
+            transition: background 0.3s ease;
+        }
+        .carousel-button:hover {
+            background-color: #2c3e50;
+        }
+        .carousel-button-left {
+            left: 20px;
+        }
+        .carousel-button-right {
+            right: 20px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Профессиональная уборка квартир перед сдачей в аренду!</h1>
-        <h2>Чистота и порядок — залог успешной аренды!</h2>
-    </header>
-    
-    <section id="services">
-        <p>Мы предлагаем качественные услуги по уборке квартир, которые готовятся к сдаче в аренду. Наша команда профессионалов обеспечит идеальную чистоту, чтобы ваши жильцы чувствовали себя комфортно и уютно.</p>
-    </section>
-    
-    <section id="advantages">
-        <h3>Преимущества наших услуг</h3>
-        <ul>
-            <li><strong>Быстро и качественно:</strong> Мы понимаем, что время — деньги, поэтому работаем быстро и эффективно.</li>
-            <li><strong>Экологичные средства:</strong> Используем только безопасные для здоровья моющие средства.</li>
-            <li><strong>Гибкий график:</strong> Уборка в любое время, включая выходные и праздники.</li>
-            <li><strong>Скидки для постоянных клиентов:</strong> Специальные предложения для арендодателей и риэлторов.</li>
-        </ul>
-    </section>
-    
-    <section id="process">
-        <h3>Процесс работы</h3>
-        <ol>
-            <li><strong>Заказ услуги:</strong> Заполните форму на сайте или позвоните нам.</li>
-            <li><strong>Оценка квартиры:</strong> Мы оценим состояние квартиры и предложим оптимальный план уборки.</li>
-            <li><strong>Уборка:</strong> Наша команда выполнит уборку с учетом всех ваших пожеланий.</li>
-            <li><strong>Проверка качества:</strong> Мы гарантируем высокое качество уборки и удовлетворение клиентов.</li>
-        </ol>
-    </section>
-    
-    <section id="reviews">
-        <h3>Отзывы клиентов</h3>
-        <p>"Отличная работа! Квартира была в идеальном состоянии после уборки." — Анна, арендодатель.</p>
-        <p>"Быстро, качественно и недорого! Рекомендую!" — Сергей, риэлтор.</p>
-    </section>
-    
-    <section id="contact-form">
-        <h3>Заполните форму ниже, чтобы получить бесплатную консультацию!</h3>
-        <form>
-            <label>Имя: <input type="text" name="name" required></label><br>
-            <label>Телефон: <input type="tel" name="phone" required></label><br>
-            <label>Email: <input type="email" name="email" required></label><br>
-            <label>Комментарий: <textarea name="comment"></textarea></label><br>
-            <button type="submit">Отправить</button>
-        </form>
-    </section>
-    
-    <footer>
-        <h3>Контактная информация</h3>
-        <p>Телефон: +7 (XXX) XXX-XX-XX</p>
-        <p>Email: info@chisto-pro.ru</p>
-        <p>Адрес: ул. Примерная, д. 1, г. Москва</p>
+
+<div class="carousel">
+    <div class="carousel-wrapper" id="carouselWrapper">
+        <!-- Отзыв 1 -->
+        <div class="carousel-item">
+            <div class="carousel-text">"Отличная работа! Квартира была в идеальном состоянии после уборки."</div>
+            <div class="author-info">— Анна, арендодатель</div>
+        </div>
         
-        <h3>Мы в соцсетях</h3>
-        <a href="#">Instagram</a> | <a href="#">Facebook</a>
-    </footer>
+        <!-- Отзыв 2 -->
+        <div class="carousel-item">
+            <div class="carousel-text">"Быстро, качественно и недорого! Рекомендую!"</div>
+            <div class="author-info">— Сергей, риэлтор</div>
+        </div>
+    </div>
+    <button class="carousel-button carousel-button-left" id="prevButton">‹</button>
+    <button class="carousel-button carousel-button-right" id="nextButton">›</button>
+</div>
+
+<script>
+    let currentIndex = 0;
+    const items = document.querySelectorAll('.carousel-item');
+    const totalItems = items.length;
+    const wrapper = document.getElementById('carouselWrapper');
+    
+    function updateCarousel() {
+        wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    document.getElementById('prevButton').addEventListener('click', () => {
+        currentIndex = (currentIndex === 0) ? totalItems - 1 : currentIndex - 1;
+        updateCarousel();
+    });
+
+    document.getElementById('nextButton').addEventListener('click', () => {
+        currentIndex = (currentIndex === totalItems - 1) ? 0 : currentIndex + 1;
+        updateCarousel();
+    });
+
+    // Автоматическое переключение каждые 5 секунд
+    setInterval(() => {
+        currentIndex = (currentIndex === totalItems - 1) ? 0 : currentIndex + 1;
+        updateCarousel();
+    }, 5000);
+</script>
+
 </body>
 </html>
