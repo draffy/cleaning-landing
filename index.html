@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Профессиональная уборка квартир перед сдачей в аренду. Качественно, быстро, доступно!">
     <title>Уборка квартир перед сдачей</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Общие стили */
-        * {
-            box-sizing: border-box;
-        }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
             min-height: 100vh;
             overflow-x: hidden;
             display: flex;
@@ -22,27 +19,10 @@
         }
 
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            text-align: center;
             padding: 20px;
             background-color: #f8f8f8;
             margin-bottom: 40px;
-        }
-
-        header img {
-            max-width: 150px;
-            height: auto;
-        }
-
-        header h1 {
-            font-size: 2rem;
-            margin: 0;
-        }
-
-        header h2 {
-            font-size: 1.2rem;
-            margin: 0;
         }
 
         /* Меню навигации */
@@ -132,72 +112,155 @@
             text-decoration: underline;
         }
 
-        /* Карусель отзывов */
-        .carousel-container {
+        /* Стили для контейнера статистики */
+        .stats-container {
             display: flex;
-            overflow: hidden;
-            width: 100%;
-            max-width: 600px;
-            margin: auto;
-            position: relative;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Добавлено для мобильной адаптивности */
+            gap: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            margin-bottom: 40px; /* Добавлен отступ снизу для разделения с следующим блоком */
         }
 
-        .carousel-item {
-            min-width: 100%;
-            transition: transform 0.5s ease-in-out;
+        /* Стили для каждого блока статистики */
+        .stat-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
             text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: calc(25% - 20px); /* Блоки занимают 25% ширины с учетом промежутков */
+            box-sizing: border-box;
         }
 
-        .carousel-item img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
+        /* Стили для мобильных устройств */
+        @media (max-width: 768px) {
+            .stat-card {
+                width: calc(50% - 20px); /* На планшетах блоки занимают 50% ширины */
+            }
         }
 
-        .carousel-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            cursor: pointer;
-            padding: 10px;
-            font-size: 18px;
+        @media (max-width: 480px) {
+            .stat-card {
+                width: 100%; /* На мобильных устройствах блоки занимают 100% ширины */
+            }
         }
 
-        .carousel-button-prev {
-            left: 0;
+        .stat-number {
+            color: #007bff;
+            font-size: 2em;
+            font-weight: bold;
         }
 
-        .carousel-button-next {
-            right: 0;
+        .stat-title {
+            color: #6c757d;
+            font-size: 0.8em;
+            margin-bottom: 10px;
+            background-color: #eee;
+            border-radius: 5px;
+            padding: 5px;
+            display: inline-block;
+        }
+
+        .stat-description {
+            font-size: 0.9em;
+        }
+
+        /* Блок с услугами */
+        #services {
+            padding: 20px;
+            margin-bottom: 40px; /* Добавлен отступ снизу для разделения */
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="cleanPro.png" alt="Логотип CleanPro">
-        <div>
-            <h1>Профессиональная уборка квартир перед сдачей в аренду!</h1>
-            <h2>Чистота и порядок — залог успешной аренды!</h2>
-        </div>
+        <h1>Профессиональная уборка квартир перед сдачей в аренду!</h1>
+        <h2>Чистота и порядок — залог успешной аренды!</h2>
+        <nav>
+            <ul class="menu">
+                <li>
+                    <a href="services.html">Услуги ▼</a>
+                    <ul class="submenu">
+                        <li><a href="cleaning.html">Уборка помещений</a></li>
+                        <li><a href="windows.html">Мытье окон и балконов</a></li>
+                        <li><a href="chemclean.html">Химчистка</a></li>
+                    </ul>
+                </li>
+                <li><a href="business.html">Для юр. лиц</a></li>
+                <li><a href="promo.html">Акции</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="reviews.html">Отзывы</a></li> <!-- Здесь добавлена ссылка на страницу с отзывами -->
+                <li><a href="portfolio.html">Примеры работ</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
     </header>
+
+    <section id="stats">
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-number">12+</div>
+                <div class="stat-title">опыт</div>
+                <div class="stat-description">Лет успешного опыта работы в клининге</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">20+</div>
+                <div class="stat-title">команда</div>
+                <div class="stat-description">Аттестованных специалистов в штате</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24/7</div>
+                <div class="stat-title">гибкость</div>
+                <div class="stat-description">Готовы выехать на объект даже ночью</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">60+</div>
+                <div class="stat-title">доверие</div>
+                <div class="stat-description">Довольных клиентов ежемесячно</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <p>Мы предлагаем качественные услуги по уборке квартир, которые готовятся к сдаче в аренду. Наша команда профессионалов обеспечит идеальную чистоту, чтобы ваши жильцы чувствовали себя комфортно и уютно.</p>
+    </section>
+
+    <section id="advantages">
+        <h3>Преимущества наших услуг</h3>
+        <ul>
+            <li><strong>Быстро и качественно:</strong> Мы понимаем, что время — деньги, поэтому работаем быстро и эффективно.</li>
+            <li><strong>Экологичные средства:</strong> Используем только безопасные для здоровья моющие средства.</li>
+            <li><strong>Гибкий график:</strong> Уборка в любое время, включая выходные и праздники.</li>
+            <li><strong>Скидки для постоянных клиентов:</strong> Специальные предложения для арендодателей и риэлторов.</li>
+        </ul>
+    </section>
+
+    <section id="process">
+        <h3>Процесс работы</h3>
+        <ol>
+            <li><strong>Заказ услуги:</strong> Заполните форму на сайте или позвоните нам.</li>
+            <li><strong>Оценка квартиры:</strong> Мы оценим состояние квартиры и предложим оптимальный план уборки.</li>
+            <li><strong>Уборка:</strong> Наша команда выполнит уборку с учетом всех ваших пожеланий.</li>
+            <li><strong>Проверка качества:</strong> Мы гарантируем высокое качество уборки и удовлетворение клиентов.</li>
+        </ol>
+    </section>
 
     <section id="reviews">
         <h3>Отзывы клиентов</h3>
         <div class="carousel-container" id="carousel">
             <div class="carousel-item">
-                <img src="client1.jpg" alt="Анна, арендодатель">
-                <p>"Отличная работа! Квартира была в идеальном состоянии после уборки." — Анна</p>
+                <img src="client1.jpg" alt="Client 1">
+                <p>"Отличная работа! Квартира была в идеальном состоянии после уборки." — Анна, арендодатель.</p>
             </div>
             <div class="carousel-item">
-                <img src="client2.jpg" alt="Сергей, риэлтор">
-                <p>"Быстро, качественно и недорого! Рекомендую!" — Сергей</p>
+                <img src="client2.jpg" alt="Client 2">
+                <p>"Быстро, качественно и недорого! Рекомендую!" — Сергей, риэлтор.</p>
             </div>
             <div class="carousel-item">
-                <img src="client3.jpg" alt="Екатерина, арендодатель">
-                <p>"Очень довольна результатом! Квартира блестела, и мы сдали её намного быстрее." — Екатерина</p>
+                <img src="client3.jpg" alt="Client 3">
+                <p>"Очень довольна результатом! Квартира блестела, и мы сдали её намного быстрее." — Екатерина, арендодатель.</p>
             </div>
         </div>
         <button class="carousel-button carousel-button-prev" id="prevBtn">&#10094;</button>
@@ -205,30 +268,37 @@
     </section>
 
     <footer>
-        <h3>Контактная информация</h3>
-        <p>Телефон: +7 (XXX) XXX-XX-XX</p>
+        <p>&copy; 2025 Уборка квартир. Все права защищены.</p>
+        <p><a href="privacy.html">Политика конфиденциальности</a> | <a href="terms.html">Условия использования</a></p>
     </footer>
 
     <script>
-        let currentIndex = 0;
-        const items = document.querySelectorAll('.carousel-item');
-        const totalItems = items.length;
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+        const totalSlides = slides.length;
 
         function showSlide(index) {
-            items.forEach((item, i) => {
-                item.style.transform = `translateX(-${index * 100}%)`;
+            if (index < 0) {
+                currentSlide = totalSlides - 1;
+            } else if (index >= totalSlides) {
+                currentSlide = 0;
+            } else {
+                currentSlide = index;
+            }
+            slides.forEach((slide, i) => {
+                slide.style.display = i === currentSlide ? 'block' : 'none';
             });
         }
 
         document.getElementById('prevBtn').addEventListener('click', () => {
-            currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalItems - 1;
-            showSlide(currentIndex);
+            showSlide(currentSlide - 1);
         });
 
         document.getElementById('nextBtn').addEventListener('click', () => {
-            currentIndex = (currentIndex < totalItems - 1) ? currentIndex + 1 : 0;
-            showSlide(currentIndex);
+            showSlide(currentSlide + 1);
         });
+
+        showSlide(currentSlide);
     </script>
 </body>
 </html>
